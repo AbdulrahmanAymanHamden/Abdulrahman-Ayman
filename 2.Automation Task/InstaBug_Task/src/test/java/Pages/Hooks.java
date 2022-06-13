@@ -21,7 +21,7 @@ public class Hooks {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 
-        driver.navigate().to("https://www.google.com/?hl=ar");
+        Hooks.driver.navigate().to("https://www.google.com/?hl=ar");
     }
     @After
     public void close_browser()
