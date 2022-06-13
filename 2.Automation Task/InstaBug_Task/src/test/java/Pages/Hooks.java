@@ -13,6 +13,7 @@ public class Hooks {
     @Before
     public void open_browser()
     {
+        System.out.println("Abdo");
         // 1- Bridge between testScript and browser
         String chromePath = System.getProperty("user.dir") + "\\src\\main\\resources\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver" , chromePath);

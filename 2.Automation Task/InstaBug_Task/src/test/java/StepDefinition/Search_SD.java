@@ -6,7 +6,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.en_scouse.An;
 import org.openqa.selenium.Keys;
 import org.testng.asserts.SoftAssert;
 
@@ -39,6 +38,7 @@ public class Search_SD {
     {
         String page_URL = "https://www.google.com/search?q=linkedin&hl=ar&sxsrf=ALiCzsb8Wbrvux4IQa55ak3JkdAV6JMawg%3A1655070167668&ei=112mYs61KJrP7_UPgpakwAw&oq=lin&gs_lcp=Cgdnd3Mtd2l6EAMYATIECCMQJzIECCMQJzIRCC4QgAQQsQMQgwEQxwEQ0QMyEQguEIAEELEDEIMBEMcBENEDMgQILhBDMgsIABCABBCxAxCDATILCAAQgAQQsQMQgwEyCwgAEIAEELEDEIMBMggIABCABBCxAzILCAAQgAQQsQMQgwE6BwgAEEcQsAM6BwgAELADEEM6EgguEMcBENEDEMgDELADEEMYAToMCC4QyAMQsAMQQxgBOgYIIxAnEBM6CAguEIAEELEDOgQILhADOg4ILhCABBCxAxCDARDUAjoLCC4QsQMQgwEQ1AI6CAguELEDEIMBOgoILhDHARDRAxBDSgQIQRgASgQIRhgAULcFWLAIYLERaANwAXgAgAGvAYgB-gOSAQMwLjOYAQCgAQHIAQvAAQHaAQQIARgI&sclient=gws-wiz";
         soft.assertTrue(Hooks.driver.getCurrentUrl().contains(page_URL));
+        soft.assertAll();
     }
 
     //**************************************************** Scenario 2 ******************************************/
@@ -53,7 +53,7 @@ public class Search_SD {
     public void Drop_Menu_Appears() throws InterruptedException {
         soft.assertTrue(searchPage.Search_Menu().isDisplayed());
         soft.assertTrue(searchPage.Search_Suggestions().getText().contains("Lin"));
-
+        soft.assertAll();
         Thread.sleep(3000);
     }
 
@@ -83,6 +83,7 @@ public class Search_SD {
     @Then("Google Keyboard should appear and user can use it in writing")
     public void Google_Keyboard_Appear() throws InterruptedException {
         soft.assertTrue(searchPage.Keyboard().isDisplayed());
+        soft.assertAll();
         Thread.sleep(2000);
     }
 
@@ -96,6 +97,7 @@ public class Search_SD {
     @Then("User should directed to Microphone page")
     public void Navigate_to_Microphone_Page() throws InterruptedException {
         soft.assertTrue(searchPage.MicrophonePage().isDisplayed());
+        soft.assertAll();
         Thread.sleep(2000);
     }
 
@@ -109,6 +111,7 @@ public class Search_SD {
     public void User_Navigate_To_English_Engine()
     {
         soft.assertTrue(searchPage.Country_Name().getText().contains("Egypt"));
+        soft.assertAll();
     }
 
     @Given("User Clicked on Arabic link to search in Arabic")
@@ -119,7 +122,8 @@ public class Search_SD {
     @Then("User should navigate to Arabic Engine of google")
     public void User_Navigate_To_Arabic_Engine()
     {
-        soft.assertTrue(searchPage.Country_Name().getText().contains("مصر"));
+        soft.assertEquals(searchPage.Country_Name().getText(),"مصر");
+        soft.assertAll();
     }
 
 
