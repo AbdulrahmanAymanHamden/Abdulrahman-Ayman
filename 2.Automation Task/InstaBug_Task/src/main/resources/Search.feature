@@ -13,7 +13,7 @@ Feature: Search -> User should be able to search for anything he wants
     When user Enters a subtext into search box
     Then A drop down menu should appears with suggestions related to the subtext
 
-    ################################### Scenario 3 ########################################################
+    ################################### Scenario .3 ########################################################
 
   Scenario: user can select one of the suggestions of the drop down menu
     Given user clicked on the search box
@@ -22,7 +22,7 @@ Feature: Search -> User should be able to search for anything he wants
     And User selects one of the suggestions
     Then User should directed to the coressponding page
 
-    ################################ Scenario 4 ##########################################################
+    ################################ Scenario .4 ##########################################################
   Scenario: User can search using Google Keyboard
     Given  user clicked on Google Keyboard
     Then Google Keyboard should appear and user can use it in writing
